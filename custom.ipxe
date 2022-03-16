@@ -4,8 +4,9 @@
 ###
 
 :start
-echo Hello world!
-sleep 10
+kernel harvester-v1.0.0-vmlinuz-amd64 ip=dhcp net.ifnames=1 rd.cos.disable rd.noverifyssl console=ttyS0 console=tty1 root=live:http://192.168.1.204:8089/harvester-v1.0.0-rootfs-amd64.squashfs harvester.install.automatic=true harvester.install.config_url=http://192.168.1.204:8089/config-create.yaml
+initrd harvester-v1.0.0-initrd-amd64
+boot
 goto custom_exit
 
 :custom_exit
